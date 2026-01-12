@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import com.example.BgFirstSpring.entity.firstData;
 import com.example.BgFirstSpring.service.FirstService;
 
+import java.util.List;
+
 @RestController
 public class HomeController {
 
@@ -20,6 +22,11 @@ public class HomeController {
     @PostMapping("/insertData")
     public firstData insertData(@RequestBody firstData data){
         return fist.insert(data);
+    }
+
+    @PostMapping("/allUser")
+    public List<firstData> allUser(){
+        return fist.all();
     }
     //---------------------------------------------------------------
     @PostMapping("/addUser")

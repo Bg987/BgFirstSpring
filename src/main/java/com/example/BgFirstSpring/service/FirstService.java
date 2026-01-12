@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.BgFirstSpring.model.data;
 import java.util.ArrayList;
+import java.util.List;
+
 import com.example.BgFirstSpring.repository.firstRepo;
 import com.example.BgFirstSpring.entity.firstData;
 
@@ -20,6 +22,9 @@ public class FirstService {
     //------------------------------------------------------
     public firstData insert(firstData data){
         return repo.save(data);
+    }
+    public List<firstData> all(){
+        return repo.findAll();
     }
     //----------------------------------------------------------
     public data addU(data user) {
